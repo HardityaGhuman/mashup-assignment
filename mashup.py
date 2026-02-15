@@ -22,17 +22,23 @@ def search_and_download_videos(singer_name, num_videos, output_dir="downloads"):
     os.makedirs(output_dir, exist_ok=True)
     
     ydl_opts = {
-        'format': 'bestaudio/best',
-        'outtmpl': os.path.join(output_dir, '%(id)s.%(ext)s'),
-        'quiet': True,
-        'no_warnings': True,
-        'extract_flat': False,
-        'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        'extractor_retries': 5,
-        'fragment_retries': 5,
-        'skip_unavailable_fragments': True,
-        'ignoreerrors': False,
-        'nocheckcertificate': True,
+        "format": "bestaudio/best",
+        "outtmpl": os.path.join(output_dir, "%(id)s.%(ext)s"),
+        "quiet": True,
+        "no_warnings": True,
+        "extract_flat": False,
+        "nocheckcertificate": True,
+        "geo_bypass": True,
+        "extractor_retries": 5,
+        "fragment_retries": 5,
+        "skip_unavailable_fragments": True,
+        "http_headers": {
+            "User-Agent": (
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/120.0.0.0 Safari/537.36"
+            )
+        },
     }
     
     search_query = f"{singer_name} official audio"
