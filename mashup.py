@@ -26,12 +26,11 @@ def search_and_download_videos(singer_name, num_videos, output_dir="downloads"):
         "outtmpl": os.path.join(output_dir, "%(id)s.%(ext)s"),
         "quiet": True,
         "no_warnings": True,
-        "extract_flat": False,
         "nocheckcertificate": True,
         "geo_bypass": True,
         "extractor_retries": 5,
         "fragment_retries": 5,
-        "skip_unavailable_fragments": True,
+        "cookies": "cookies.txt",
         "http_headers": {
             "User-Agent": (
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
