@@ -27,6 +27,7 @@ def search_and_download_videos(singer_name, num_videos, output_dir="downloads"):
         'quiet': True,
         'no_warnings': True,
         'extract_flat': False,
+        'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36...',
     }
     
     search_query = f"{singer_name} official audio"
