@@ -1,0 +1,5 @@
+yt-dlp>=2024.3.10
+pydub>=0.25.1
+audioop-lts>=0.2.1
+streamlit>=1.30.0
+ffmpeg-python>=0.2.0
